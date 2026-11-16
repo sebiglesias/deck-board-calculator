@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deck Board Calculator — Composite & Lumber (12', 16', 20' Boards) — Accurate Material Estimator</title>
+  <meta name="description" content="Calculate exact number of 12ft, 16ft, or 20ft composite (Trex) or wood deck boards, joists, and hidden deck fastener boxes.">
+  <link rel="canonical" href="https://sebiglesias.com.ar/deck-board-calculator/">
+  <meta name="theme-color" content="#10b981">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deck Board Calculator — Composite & Lumber (12', 16', 20' Boards)">
+  <meta property="og:description" content="Calculate exact number of 12ft, 16ft, or 20ft composite (Trex) or wood deck boards, joists, and hidden deck fastener boxes.">
+  <meta property="og:url" content="https://sebiglesias.com.ar/deck-board-calculator/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BNDBQP0W7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BNDBQP0W7');
+  </script>
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-3381238987477190">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3381238987477190" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Deck Board Calculator \u2014 Composite & Lumber (12', 16', 20' Boards)",
+    "url": "https://sebiglesias.com.ar/deck-board-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate exact number of 12ft, 16ft, or 20ft composite (Trex) or wood deck boards, joists, and hidden deck fastener boxes.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What joist spacing is required for composite deck boards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard 5/4 composite decking (Trex, TimberTech) requires maximum 16-inch on-center joist spacing for perpendicular installations. If decking is installed at a 45-degree diagonal pattern, joist spacing must be reduced to 12 inches on-center to prevent board sagging under foot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it cheaper to buy 12ft, 16ft, or 20ft deck boards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Buying boards matching your exact deck dimensions eliminates butted joints. For a 16-foot wide deck, purchasing 16ft boards avoids unsightly seams in the middle of your deck that can catch moisture and dirt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is joist tape recommended on new deck builds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Joist tape is a self-adhering butyl membrane placed over the top edge of treated wood joists before laying boards. It prevents rainwater from seeping into screw holes, extending deck frame life by 10 to 15 years."
+        }
+      }
+    ]
+  }
+]
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">🔨 Residential Decking Standards</div>
+      <h1>Deck Board & Fastener Calculator</h1>
+      <p class="subtitle">Calculate total decking boards (12', 16', 20'), linear footage, joist count, and hidden clip fastener boxes.</p>
+    </header>
+
+    <!-- AdSense Top Banner -->
+    <div style="text-align:center; margin: 16px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3381238987477190"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="calc-grid">
+      <!-- Inputs Card -->
+      <form class="card" id="deck-board-calculator-form" onsubmit="event.preventDefault();">
+        <h2>📐 Deck Dimensions & Board Size</h2>
+        
+        <div class="input-row">
+          <div class="form-group">
+            <label for="deckLen">Length (Parallel to House) <span class="hint">Width of deck</span></label>
+            <div class="input-wrap">
+              <input type="number" id="deckLen" step="1" min="4" value="20" required>
+              <span class="input-suffix">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="deckWid">Projection (Out from House) <span class="hint">Board run direction</span></label>
+            <div class="input-wrap">
+              <input type="number" id="deckWid" step="1" min="4" value="16" required>
+              <span class="input-suffix">ft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="boardWidth">Nominal Board Width</label>
+            <select id="boardWidth">
+              <option value="5.5" selected>5.5-Inch (Standard 5/4x6 or Composite)</option>
+              <option value="3.5">3.5-Inch (Standard 2x4)</option>
+              <option value="7.25">7.25-Inch (Wide Plank 2x8)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="joistSpacing">Joist Spacing (On-Center)</label>
+            <select id="joistSpacing">
+              <option value="12">12" O.C. (Diagonal or Commercial Composite)</option>
+              <option value="16" selected>16" O.C. (Standard Residential Deck)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+            <input type="checkbox" id="deckWaste" checked style="accent-color:#10b981; width:18px; height:18px;">
+            <span>Add 10% Cut Waste Buffer (Diagonal cuts, squaring ends)</span>
+          </label>
+        </div>
+
+      </form>
+
+      <!-- Results Card -->
+      <div class="card">
+        <h2>🎯 Decking Board Quantities</h2>
+        
+        <div class="result-hero">
+          <div class="result-label">Recommended 16-Foot Boards Needed</div>
+          <div class="result-number" id="boards16">47</div>
+          <div class="result-label" style="color:#ffffff;">Deck Boards (16 ft Length)</div>
+          <div style="font-size:0.95rem; color:#a7f3d0; margin-top:6px;" id="linearFeetText">≈ 742 Total Linear Feet</div>
+        </div>
+
+        <div class="sub-hero-grid">
+          <div class="sub-hero-col">
+            <div class="sub-hero-label">If Using 12-ft Boards</div>
+            <div class="sub-hero-val" id="boards12">62 Boards</div>
+            <div class="sub-hero-sub">Requires staggered seams</div>
+          </div>
+          <div class="sub-hero-col">
+            <div class="sub-hero-label">If Using 20-ft Boards</div>
+            <div class="sub-hero-val" id="boards20">38 Boards</div>
+            <div class="sub-hero-sub">Full continuous span</div>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-desc">Total Deck Area</div>
+            <div class="spec-val" id="deckArea">320 sq ft</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Total Joists Required</div>
+            <div class="spec-val" id="joistCount">16 Joists</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Hidden Fastener Clips</div>
+            <div class="spec-val" id="clipCount">≈ 800 Clips (1-2 Boxes)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Joist Butyl Flashing Tape</div>
+            <div class="spec-val" id="tapeRolls">5 Rolls (50ft)</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Amazon Supplies Box -->
+    <section class="supplies-card">
+      <h3>🛠️ Recommended Tools, Hardware & Building Supplies</h3>
+      <div class="supplies-grid">
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">CAMO Marksman Pro Hidden Deck Fastening Tool</div>
+            <div class="supply-desc">Side-angle pocket hole guide for edge-screwing wood and composite boards with zero face holes.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=camo+marksman+pro+deck+tool&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Trex Universal Hidden Fastener Clips (Box of 900)</div>
+            <div class="supply-desc">Pre-assembled glass-filled nylon clips with stainless steel screws for grooved composite boards.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=trex+hidden+fastener+clips+900&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Titebond Joist Tape Butyl Flashing (1-5/8" x 50ft)</div>
+            <div class="supply-desc">Self-adhesive waterproof joist barrier tape protects treated wood joists from rot and screw leaks.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=joist+tape+butyl+flashing+deck&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Starborn Cap-Tor xd Composite Deck Screws (1000 Pack)</div>
+            <div class="supply-desc">Color-matched epoxy coated screws engineered to prevent mushrooming in PVC and composite boards.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=starborn+cap+tor+xd+composite+screws&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+      </div>
+      <p style="font-size:0.75rem; color:#94a3b8; margin-top:14px; margin-bottom:0; text-align:center;">
+        ⚖️ <em>Affiliate Notice: As an Amazon Associate, this site earns from qualifying purchases at no additional cost to you. We strictly link to trade-grade construction tools, hardware, and safety materials.</em>
+      </p>
+    </section>
+
+    <!-- FAQ Section for SEO -->
+    <section class="faq-section">
+      <h2 style="font-size:1.35rem; color:#ffffff; margin-bottom:16px;">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What joist spacing is required for composite deck boards?</div>
+        <div class="faq-a">Standard 5/4 composite decking (Trex, TimberTech) requires maximum 16-inch on-center joist spacing for perpendicular installations. If decking is installed at a 45-degree diagonal pattern, joist spacing must be reduced to 12 inches on-center to prevent board sagging under foot.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is it cheaper to buy 12ft, 16ft, or 20ft deck boards?</div>
+        <div class="faq-a">Buying boards matching your exact deck dimensions eliminates butted joints. For a 16-foot wide deck, purchasing 16ft boards avoids unsightly seams in the middle of your deck that can catch moisture and dirt.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why is joist tape recommended on new deck builds?</div>
+        <div class="faq-a">Joist tape is a self-adhering butyl membrane placed over the top edge of treated wood joists before laying boards. It prevents rainwater from seeping into screw holes, extending deck frame life by 10 to 15 years.</div>
+      </div>
+    </section>
+
+    <!-- Bottom AdSense Banner -->
+    <div style="text-align:center; margin: 32px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3381238987477190"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer>
+      <p>© 2026 <a href="https://sebiglesias.com.ar/">sebiglesias.com.ar</a> · Deck Board Calculator — Composite & Lumber (12', 16', 20' Boards). Educational and trade reference tool.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

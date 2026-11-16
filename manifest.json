@@ -1,0 +1,15 @@
+{
+  "name": "Deck Board Calculator \u2014 Composite & Lumber (12', 16', 20' Boards)",
+  "short_name": "Deck Calc",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07120e",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
